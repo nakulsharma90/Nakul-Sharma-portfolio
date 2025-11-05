@@ -14,7 +14,7 @@ const education = [
     institution: "Lovely Professional University",
     location: "Punjab, India",
     degree: "Bachelor of Computer Application",
-    performance: "CGPA: 8.00",
+    performance: "CGPA: 8.03",
     period: "August 2022 - April 2025",
   },
   {
