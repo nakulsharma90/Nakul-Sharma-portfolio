@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "./ui/button";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const Hero = () => {
   return (
@@ -9,6 +10,18 @@ export const Hero = () => {
       
       <div className="relative z-10 max-w-5xl w-full animate-fade-in">
         <div className="text-center space-y-8">
+          {/* Profile Photo */}
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-cyber-cyan rounded-full blur-xl opacity-30 animate-glow-pulse" />
+              <img 
+                src={profilePhoto} 
+                alt="Nakul Sharma - Cybersecurity Specialist"
+                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/30 shadow-glow"
+              />
+            </div>
+          </div>
+
           {/* Name with glow effect */}
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-cyber-cyan to-secondary bg-clip-text text-transparent animate-slide-up">
