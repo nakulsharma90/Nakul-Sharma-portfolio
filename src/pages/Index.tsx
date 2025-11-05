@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/Hero";
+import { Skills } from "@/components/Skills";
+import { Projects } from "@/components/Projects";
+import { Education } from "@/components/Education";
+import { Certificates } from "@/components/Certificates";
+import { Activities } from "@/components/Activities";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <Hero />
+      <Skills />
+      <Projects />
+      <Education />
+      <Certificates />
+      <Activities />
+      
+      <footer className="py-8 text-center border-t border-primary/20">
+        <p className="text-muted-foreground">
+          © 2025 Nakul Sharma. All rights reserved.
+        </p>
+      </footer>
+    </main>
   );
 };
 
