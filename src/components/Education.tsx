@@ -1,6 +1,7 @@
 import { Card } from "./ui/card";
 import { GraduationCap } from "lucide-react";
 
+
 const education = [
   {
     institution: "Lovely Professional University",
