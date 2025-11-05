@@ -5,15 +5,9 @@ const education = [
   {
     institution: "Lovely Professional University",
     location: "Punjab, India",
-    degree: "Master of Computer Application".
-    period: "Since August 2025 Present"
-  },
-  {
-    institution: "Lovely Professional University",
-    location: "Punjab, India",
     degree: "Bachelor of Computer Application",
-    performance: "CGPA: 8.03",
-    period: "August 2022 - April 2025",
+    performance: "CGPA: 8.00",
+    period: "Since August 2022",
   },
   {
     institution: "Maharishi Dayanand Saraswati University",
