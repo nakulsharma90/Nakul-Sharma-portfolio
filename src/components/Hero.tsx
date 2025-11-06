@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
@@ -37,6 +37,17 @@ export const Hero = () => {
 
           {/* Contact buttons */}
           <div className="flex flex-wrap gap-4 justify-center pt-8">
+            <Button
+              variant="default"
+              size="lg"
+              className="group bg-gradient-to-r from-primary to-accent hover:shadow-glow transition-all duration-300"
+              asChild
+            >
+              <a href="/nakul_sharma_resume.pdf" download="Nakul_Sharma_Resume.pdf">
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
+              </a>
+            </Button>
             <Button
               variant="outline"
               size="lg"
