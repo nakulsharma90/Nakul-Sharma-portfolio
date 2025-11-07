@@ -25,7 +25,7 @@ export const Hero = () => {
           {/* Name with glow effect */}
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-cyber-cyan to-secondary bg-clip-text text-transparent animate-slide-up">
-              Nakul Sharma
+              Hi I'm Nakul Sharma
             </h1>
             <div className="h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
