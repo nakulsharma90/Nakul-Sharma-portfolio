@@ -7,6 +7,7 @@ import { Education } from "@/components/Education";
 import { Publications } from "@/components/Publications";
 import { Certificates } from "@/components/Certificates";
 import { Activities } from "@/components/Activities";
+import { Contact } from "@/components/Contact";
 
 const Index = () => {
   return (
@@ -35,6 +36,9 @@ const Index = () => {
       </div>
       <div id="activities">
         <Activities />
+      </div>
+      <div id="contact">
+        <Contact />
       </div>
       
       <footer className="py-8 text-center border-t border-primary/20">
