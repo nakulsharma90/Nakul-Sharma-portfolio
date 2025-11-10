@@ -1,5 +1,6 @@
 import { Card } from "./ui/card";
 import { Shield, Code, Wrench, Users, Brain } from "lucide-react";
+import { StaggeredChildren } from "./StaggeredChildren";
 
 const skillCategories = [
   {
@@ -38,29 +39,31 @@ export const Skills = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card
-              key={index}
-              className="p-6 bg-gradient-card backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <category.icon className="h-6 w-6 text-primary" />
+          <StaggeredChildren delay={150}>
+            {skillCategories.map((category, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-gradient-card backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <category.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="px-3 py-1 text-sm rounded-full bg-muted/50 border border-primary/20 text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </Card>
-          ))}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="px-3 py-1 text-sm rounded-full bg-muted/50 border border-primary/20 text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </StaggeredChildren>
         </div>
       </div>
     </section>

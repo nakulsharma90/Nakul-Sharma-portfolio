@@ -1,5 +1,6 @@
 import { Card } from "./ui/card";
 import { Heart, Shield } from "lucide-react";
+import { StaggeredChildren } from "./StaggeredChildren";
 
 const activities = [
   {
@@ -35,35 +36,37 @@ export const Activities = () => {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {activities.map((activity, index) => (
-            <Card
-              key={index}
-              className="p-6 md:p-8 bg-gradient-card backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
-            >
-              <div className="flex gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <activity.icon className="h-8 w-8 text-primary" />
+          <StaggeredChildren delay={200}>
+            {activities.map((activity, index) => (
+              <Card
+                key={index}
+                className="p-6 md:p-8 bg-gradient-card backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <activity.icon className="h-8 w-8 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{activity.title}</h3>
+                    <p className="text-sm text-primary">{activity.date}</p>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{activity.title}</h3>
-                  <p className="text-sm text-primary">{activity.date}</p>
-                </div>
-              </div>
-              
-              <p className="text-card-foreground mb-4">{activity.description}</p>
-              
-              <ul className="space-y-2">
-                {activity.highlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-muted-foreground">
-                    <span className="text-primary mt-1.5">▸</span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          ))}
+                
+                <p className="text-card-foreground mb-4">{activity.description}</p>
+                
+                <ul className="space-y-2">
+                  {activity.highlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                      <span className="text-primary mt-1.5">▸</span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </StaggeredChildren>
         </div>
       </div>
     </section>
