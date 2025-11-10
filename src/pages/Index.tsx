@@ -8,6 +8,25 @@ import { Publications } from "@/components/Publications";
 import { Certificates } from "@/components/Certificates";
 import { Activities } from "@/components/Activities";
 import { Contact } from "@/components/Contact";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+const AnimatedSection = ({ id, children }: { id: string; children: React.ReactNode }) => {
+  const { ref, isVisible } = useScrollAnimation();
+  
+  return (
+    <div 
+      id={id}
+      ref={ref}
+      className={`transition-all duration-700 ${
+        isVisible 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-10"
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Index = () => {
   return (
@@ -16,30 +35,30 @@ const Index = () => {
       <div id="home">
         <Hero />
       </div>
-      <div id="about">
+      <AnimatedSection id="about">
         <About />
-      </div>
-      <div id="skills">
+      </AnimatedSection>
+      <AnimatedSection id="skills">
         <Skills />
-      </div>
-      <div id="projects">
+      </AnimatedSection>
+      <AnimatedSection id="projects">
         <Projects />
-      </div>
-      <div id="education">
+      </AnimatedSection>
+      <AnimatedSection id="education">
         <Education />
-      </div>
-      <div id="publications">
+      </AnimatedSection>
+      <AnimatedSection id="publications">
         <Publications />
-      </div>
-      <div id="certificates">
+      </AnimatedSection>
+      <AnimatedSection id="certificates">
         <Certificates />
-      </div>
-      <div id="activities">
+      </AnimatedSection>
+      <AnimatedSection id="activities">
         <Activities />
-      </div>
-      <div id="contact">
+      </AnimatedSection>
+      <AnimatedSection id="contact">
         <Contact />
-      </div>
+      </AnimatedSection>
       
       <footer className="py-8 text-center border-t border-primary/20">
         <p className="text-muted-foreground">
