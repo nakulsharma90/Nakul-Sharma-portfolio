@@ -89,7 +89,7 @@ export const Hero = () => {
             >
               <a href="tel:+919024456755">
                 <Phone className="mr-2 h-5 w-5 group-hover:text-primary transition-colors" />
-                +91 9024456755
+                Call Me
               </a>
             </Button>
           </div>
